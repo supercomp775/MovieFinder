@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Movie Finder</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+</head>
+
+<body>
+
+    <div class="loader-div">
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <nav class="fixed-top d-flex justify-content-center navbar p-2">
+        <a href="javascript:void(0);" class="p-0 navbar-brand d-none d-lg-block">Movie Finder</a>
+        <div id="search-form" class="form-inline">
+            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        </div>
+    </nav>
+    <section>
+        <div class="container-fluid mt-5 p-5">
+            <div id="movie-content" class="row d-flex justify-content-center">
+                <!-- javascript will come here -->
+            </div>
+        </div>
+    </section>
+    <!-- End Header -->
+
+    <div class="container">
+        <div class="row" id="movie_list">
+            <h1 class="text-center">Search Movies</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
