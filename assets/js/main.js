@@ -77,25 +77,46 @@ $(function () {
 
             let parentdiv = $(this);
 
-            $.get("http://www.omdbapi.com/?apikey=92087764&i=" + id,
-                '',
-                function (data, textStatus, jqXHR) {
-                    if (data.Response == 'False') {
+            $.ajax({
+                type: "get",
+                url: 'http://www.omdbapi.com/?apikey=92087764&i=' + id,
+                dataType: "json",
+                crossDomain: true,
+                success: function (response) {
+                    if (response.Response == 'False') {
                         //do nothing
                     } else {
-                        let result = `<h4>${data.Title}</h4>
-                          <h5>Year: ${data.Year}</h5>
-                          <h6>Rated: ${data.Rated}</h6>
-                          <h6>Released: ${data.Released}</h6>
-                          <h6>Director: ${data.Director}</h6>
-                          <h6>Ratings: ${data.imdbRating}</h6>`;
+                        let result = `<h4>${response.Title}</h4>
+                          <h5>Year: ${response.Year}</h5>
+                          <h6>Rated: ${response.Rated}</h6>
+                          <h6>Released: ${response.Released}</h6>
+                          <h6>Director: ${response.Director}</h6>
+                          <h6>Ratings: ${response.imdbRating}</h6>`;
 
                         parentdiv.find(".movie-details").html(result);
                     }
+                }
+            });
 
-                },
-                "json"
-            );
+            // $.get("http://www.omdbapi.com/?apikey=92087764&i=" + id,
+            //     '',
+            //     function (data, textStatus, jqXHR) {
+            //         if (data.Response == 'False') {
+            //             //do nothing
+            //         } else {
+            //             let result = `<h4>${data.Title}</h4>
+            //               <h5>Year: ${data.Year}</h5>
+            //               <h6>Rated: ${data.Rated}</h6>
+            //               <h6>Released: ${data.Released}</h6>
+            //               <h6>Director: ${data.Director}</h6>
+            //               <h6>Ratings: ${data.imdbRating}</h6>`;
+
+            //             parentdiv.find(".movie-details").html(result);
+            //         }
+
+            //     },
+            //     "json"
+            // );
 
         }
     );
